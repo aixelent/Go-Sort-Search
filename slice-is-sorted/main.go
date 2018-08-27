@@ -7,11 +7,11 @@ import (
 
 type language struct {
 	Name string
-	Age  int
+	Year int
 }
 
 func (p language) String() string {
-	return fmt.Sprintf("Person %s: %d\n", p.Name, p.Age)
+	return fmt.Sprintf("Person %s: %d\n", p.Name, p.Year)
 }
 
 func main() {
@@ -26,19 +26,19 @@ func main() {
 		{"Javascript", 1995},
 	}
 
-	res := sort.SliceIsSorted(languages, func(i, j int) bool { return languages[i].Age < languages[j].Age })
+	res := sort.SliceIsSorted(languages, func(i, j int) bool { return languages[i].Year < languages[j].Year })
 	fmt.Println("Is slice sorted by Name?: ", res)
 	// result looks like a originally slice
 	for _, v := range languages {
-		fmt.Println(v.Name, v.Age)
+		fmt.Println(v.Name, v.Year)
 	}
 
 	// sorting slice
-	sort.Slice(languages, func(i, j int) bool { return languages[i].Age < languages[j].Age })
+	sort.Slice(languages, func(i, j int) bool { return languages[i].Year < languages[j].Year })
 	// checking if slice has been sorted
-	res = sort.SliceIsSorted(languages, func(i, j int) bool { return languages[i].Age < languages[j].Age })
-	fmt.Println("Is slice sorted by Name?: ", res)
+	res = sort.SliceIsSorted(languages, func(i, j int) bool { return languages[i].Year < languages[j].Year })
+	fmt.Println("\nIs slice sorted by Name?: ", res)
 	for _, v := range languages {
-		fmt.Println(v.Name, v.Age)
+		fmt.Println(v.Name, v.Year)
 	}
 }
