@@ -10,10 +10,6 @@ type language struct {
 	Year int
 }
 
-func (p language) String() string {
-	return fmt.Sprintf("Person %s: %d\n", p.Name, p.Year)
-}
-
 func main() {
 	languages := []language{
 		{"Java", 1995},
